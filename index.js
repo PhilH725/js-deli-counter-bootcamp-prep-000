@@ -44,16 +44,17 @@ function currentLine(line) {
 //redoing these for practice
 
 
-function takeANumber(line, name) {
-  line.push(name)
-  return `Welcome, ${name}. You are number ${line.length} in line.`
+function takeANumber(line) {
+  line.push(line.length +1)
+  //return `Welcome, ${name}. You are number ${line.length} in line.`
+  retun `Welcome, you are number ${line.length +1} in line.`
 }
 
 function nowServing(line) {
   if (line.length === 0) {
     return "There is nobody waiting to be served!"
   } else {
-    return `Currently serving ${line.shift()}.`
+    return `Currently serving number ${line.shift()}.`
   }
 }
 
@@ -77,6 +78,7 @@ function currentLine(line) {
   if (line.length === 0) {
     return "The line is currently empty."
   } else {
+    return `The line is currently ${line.length} people long.`
     var message = "The line is currently: "
     for (let i = 0; i < line.length; i++) {
       message += `${i+1}. ${line[i]}, `
